@@ -37,9 +37,11 @@ public struct KeychainKey {
 }
 
 public struct AppConstants {
-    public static let isRunningTest = NSClassFromString("XCTestCase") != nil
+    public static let isRunningTest = AppConstants.isRunningUnitTest
     || AppConstants.isRunningUITests
     || AppConstants.isRunningPerfTests
+
+    public static let isRunningUnitTest = ProcessInfo.processInfo.arguments.contains(LaunchArguments.UnitTest)
 
     public static let isRunningUITests = ProcessInfo.processInfo.arguments.contains(LaunchArguments.Test)
 
