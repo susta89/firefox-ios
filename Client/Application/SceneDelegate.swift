@@ -205,7 +205,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     ) {
         QuickActionsImplementation().handleShortCutItem(
             shortcutItem,
-            withBrowserViewController: browserViewController
+            withBrowserViewController: browserViewController,
+            completionHandler: completionHandler
         )
     }
 
@@ -252,7 +253,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let shortcutItem = connectionOptions.shortcutItem {
             QuickActionsImplementation().handleShortCutItem(
                 shortcutItem,
-                withBrowserViewController: browserViewController
+                withBrowserViewController: browserViewController,
+                completionHandler: { _ in }
             )
         }
     }
